@@ -54,10 +54,7 @@ func FileNameWithoutExt(file string) string {
 	return strings.TrimSuffix(file, filepath.Ext(file))
 }
 
-// SameFile compares the between path if the same path,
-// it maybe the same path in case case-ignore, such as:
-// /Users/go_zero and /Users/Go_zero, as far as we know,
-// this case maybe appear on macOS and Windows.
+// SameFile compares the between path if the same path
 func SameFile(path1, path2 string) (bool, error) {
 	stat1, err := os.Stat(path1)
 	if err != nil {
